@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Calendar</title>
+
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<!--
+<div id ="user_nav">
+	<%if current_user%>
+	<%= link_to 'edit profile', edit_user_path(:current)%> ||
+	<%= link_to 'logout', logout_path%>
+	<%else%>
+	<%= link_to 'register', new_user_path%> ||
+	<%= link_to 'login', login_path%>
+	<%end%>
+</div>
+-->
+
+
+<%= yield %>
+
+</body>
+</html>

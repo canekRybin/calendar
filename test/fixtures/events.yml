@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  content: MyString
+  date: 2011-10-20 23:29:58
+  id_user: 1
+  id_repeat: 1
+
+two:
+  name: MyString
+  content: MyString
+  date: 2011-10-20 23:29:58
+  id_user: 1
+  id_repeat: 1

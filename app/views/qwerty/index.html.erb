@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Ruby on Rails: Welcome aboard</title>
+
+	<%= stylesheet_link_tag    "qwerty" %>
+	 
+  </head>
+
+  <body>
+  <%="hello #{current_user}"%>
+   <div id ="user_nav">
+		<%if current_user%>
+			<%= link_to 'edit profile', edit_user_path(:current)%>
+                        <%= link_to 'all users', users_path%>
+			<%= link_to 'log out', logout_path, :class => 'asdf'%>
+		<%else%>
+			<%= link_to 'register', new_user_path%>
+			<%= link_to 'log in', login_path, :class => 'asdf'%>
+		<%end%>
+	</div>
+      
+  </body>
+</html>
