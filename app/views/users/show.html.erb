@@ -1,20 +1,25 @@
-<p id="notice"><%= notice %></p>
+<!--<p id="notice"><%= notice %></p>-->
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>
 
 <p>
-  <b>Name:</b>
+  <b>your Name:</b>
   <%= @user.name %>
 </p>
 
 <p>
-  <b>Email:</b>
+  <b>your Email:</b>
   <%= @user.email %>
 </p>
 
-<p>
-  <b>Password:</b>
-  <%= @user.password %>
-</p>
+
+<%= will_paginate @events %>
+
+<% unless @user.events.empty? %>
+  <table class="events" summary="User events">
+    <%= render @events %>
+  </table>  
+<% end %>
 
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>

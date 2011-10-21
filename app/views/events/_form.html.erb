@@ -16,20 +16,17 @@
     <%= f.text_field :name %>
   </div>
   <div class="field">
-    <%= f.label :content %><br />
-    <%= f.text_field :content %>
+    <%= f.label :text %><br />
+    <%= f.text_field :text %>
   </div>
   <div class="field">
     <%= f.label :date %><br />
     <%= f.datetime_select :date %>
   </div>
+ 
   <div class="field">
-    <%= f.label :id_user %><br />
-    <%= f.number_field :id_user %>
-  </div>
-  <div class="field">
-    <%= f.label :id_repeat %><br />
-    <%= f.number_field :id_repeat %>
+    <%= f.label :repeat_id %><br />
+    <%= f.number_field :repeat_id %>
   </div>
   <div class="actions">
     <%= f.submit %>

@@ -7,7 +7,7 @@
 
 <p>
   <b>Content:</b>
-  <%= @event.content %>
+  <%= @event.text %>
 </p>
 
 <p>
@@ -17,12 +17,12 @@
 
 <p>
   <b>Id user:</b>
-  <%= @event.id_user %>
+  <%= current_user.name  %>
 </p>
 
 <p>
   <b>Id repeat:</b>
-  <%= @event.id_repeat %>
+  <%= @event.repeat_id %>
 </p>
 
 
