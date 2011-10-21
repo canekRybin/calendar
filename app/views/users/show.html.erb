@@ -14,7 +14,6 @@
 </p>
 
 
-<%= will_paginate @events %>
 
 <% unless @user.events.empty? %>
   <table class="events" summary="User events">
@@ -22,4 +21,5 @@
   </table>  
 <% end %>
 
+<%= will_paginate @events %>
 
