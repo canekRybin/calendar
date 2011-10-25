@@ -5,7 +5,7 @@ class Event < ActiveRecord::Base
   
   validates :name, :presence => true, :length => { :maximum => 140 }
   validates :text, :presence => true
-   validates :user_id, :presence => true
+  validates :user_id, :presence => true
   #validates :date, :presence => true
   
   default_scope :order => 'events.created_at DESC'

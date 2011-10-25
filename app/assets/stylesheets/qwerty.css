@@ -1,37 +1,38 @@
-// Place all the styles related to the qwerty controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
- <style type="text/css" media="screen">
-      body {
-        margin: 0;
-        margin-bottom: 25px;
-        padding: 0;
-        background-color: #f0f0f0;
-        font-family: "Lucida Grande", "Bitstream Vera Sans", "Verdana";
-        font-size: 13px;
-        color: #333;
-      }
+<style type="text/css" media="screen">
+body {
+    margin: 0;
+    margin-bottom: 25px;
+    padding: 0;
+    background-color: #f0f0f0;
+    font-family: "Lucida Grande", "Bitstream Vera Sans", "Verdana";
+    font-size: 13px;
+    color: #333;
+}
 
-		user_nav{
-			color:#765436;
-			float:rigth;
-			font-size:20px;
-		}
-	a.asdf {
-		  margin-left: auto;
-		  margin-right: auto;
-		  display: block;
-		  text-align: center;
-		  width: 190px;
-		  color: #fff;
-		  background: #006400;
-		  font-size: 150%;
-		  font-weight: bold;
-		  padding: 20px;
-		   -moz-border-radius:    10px;
-			-webkit-border-radius: 10px;
-			border-radius:         10px;
+user_nav{
+    color:#765436;
+    
+    font-size:20px;
+}
+a.asd{
+    color:#765436;
+    font-size:20px;
+}
+a.asdf {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    text-align: center;
+    width: 190px;
+    color: #fff;
+    background: #006400;
+    font-size: 150%;
+    font-weight: bold;
+    padding: 20px;
+    -moz-border-radius:    10px;
+    -webkit-border-radius: 10px;
+    border-radius:         10px;
 
 }
 
- </stile>
+</style>

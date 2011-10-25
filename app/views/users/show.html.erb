@@ -1,8 +1,8 @@
 <!--<p id="notice"><%= notice %></p>-->
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
-
+<%= link_to 'Edit my profile', edit_user_path(@user) %> |
+<%= link_to 'show all users', users_path %>
+<%= link_to 'home page', root_path %>
 <p>
   <b>your Name:</b>
   <%= @user.name %>
@@ -22,4 +22,5 @@
 <% end %>
 
 <%= will_paginate @events %>
+<%=link_to 'new event', new_event_path%>
 
