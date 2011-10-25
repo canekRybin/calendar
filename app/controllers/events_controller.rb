@@ -24,23 +24,27 @@ class EventsController < ApplicationController
   # GET /events/new
   # GET /events/new.json
   def new
+    #@user_id = current_user.id
+    @repeats = Repeat.all   #.collect { |repeat| [repeat.id, repeat.text]}
     @event = Event.new
-    @user_id = current_user.id
+    
     respond_to do |format|
       format.html # new.html.erb
-      format.json { render json: @event }
+      format.json { render json: @event}
     end
   end
 
   # GET /events/1/edit
   def edit
+    @user = current_user 
+    @repeats = Repeat.all 
     @event = Event.find(params[:id])
   end
 
   # POST /events
   # POST /events.json
   def create
-    
+   
     @event = current_user.events.build(params[:event])
  
     respond_to do |format|

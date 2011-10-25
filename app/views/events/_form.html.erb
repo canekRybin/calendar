@@ -4,9 +4,9 @@
       <h2><%= pluralize(@event.errors.count, "error") %> prohibited this event from being saved:</h2>
 
       <ul>
-      <% @event.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
+        <% @event.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
       </ul>
     </div>
   <% end %>
@@ -21,13 +21,17 @@
   </div>
   <div class="field">
     <%= f.label :date %><br />
-    <%= f.date_select :date %>
+    <%= f.datetime_select :date %>
   </div>
- 
-  <div class="field">
-    <%= f.label :repeat_id %><br />
-    <%= f.number_field :repeat_id %>
-  </div>
+
+
+  <%#=  options_from_collection_for_select(@repeats, :id, :name) %>
+
+  <%#= f.collection_select :events, :repeat_id, @repeats, :id, :name, {:prompt => true} %>
+
+
+
+
   <div class="actions">
     <%= f.submit %>
   </div>

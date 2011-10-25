@@ -5,12 +5,12 @@
 <%= link_to 'home page', root_path %>
 <p>
   <b>your Name:</b>
-  <%= @user.name %>
+  <%= @user.name -%>
 </p>
 
 <p>
   <b>your Email:</b>
-  <%= @user.email %>
+  <%= @user.email -%>
 </p>
 
 
@@ -21,6 +21,6 @@
   </table>  
 <% end %>
 
-<%= will_paginate @events %>
+<%#= will_paginate @events %>
 <%=link_to 'new event', new_event_path%>
 
