@@ -9,9 +9,12 @@ class QwertyController < ApplicationController
       9 => "September",10 => "October", 11 => "November",12 => "December"}
     month_now = Time.now.month
     @month = months[month_now]
+   
     first = Date.today.beginning_of_month
     last = Date.today.end_of_month
-    @events = current_user.events.where("date >= #{first} and date <=#{last}")
+    @week = first.at_beginning_of_week
+   
+    @events = current_user.events#.where("date >= #{first} and date <=#{last}")
     
    
   end

@@ -8,6 +8,6 @@ class Event < ActiveRecord::Base
   validates :user_id, :presence => true
   #validates :repeat_id, :presence => true
   
-  default_scope :order => 'events.created_at DESC'
+  default_scope :order => 'events.created_at ASC'
 
 end
