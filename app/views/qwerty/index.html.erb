@@ -13,12 +13,13 @@
     <div id ="user_nav">
       <%if current_user%>
         <%="hello #{current_user.name}"%>
+        <br>        <br>  
         <%= link_to 'edit profile', edit_user_path(:current)%>
         <%= link_to 'all users', users_path%>
         <%= link_to 'log out', logout_path, :class => 'asd'%>
         <%=link_to "go my events", user_path(:current) %>
         <%=link_to "go my calendar", calendar_path(:current) %>
-      
+
       <%else%>
         <%= link_to 'register', new_user_path%>
         <%= link_to 'log in', login_path, :class => 'asdf'%>

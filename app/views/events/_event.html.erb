@@ -1,58 +1,14 @@
 
-<%=@week%>
 
-            <%#qwerty = event.date%>
-            <%#qwerty = Time.parse(qwerty)%>
-            <%#if qwerty.month == @week.month
-              if qwerty.day == @week.day%>
-                <%#="#{data}<br>"
-                link_to "#{event.name}", events_path((event.id)) 
-              %>#
-              <%#end 
-            end%>
-      
-              
-<TABLE width="100%" border=1 bordercolordark="#000000" bordercolorlight="#FFFFFF" cellpadding="5">
-  <TBODY>
-    <TR>
-      <TH valign=center align=middle width="14%" bgcolor="#000000"><font size="1" color="#FFFFFF" face="Verdana">
-        Monday</font></TH>
-      <TH valign=center align=middle width="14%" bgcolor="#000000"><font size="1" color="#FFFFFF" face="Verdana">
-        Tuesday</font>    </TH>
-      <TH valign=center align=middle width="14%" bgcolor="#000000"><font size="1" color="#FFFFFF" face="Verdana">
-        Wednesday</font>    </TH>
-      <TH valign=center align=middle width="14%" bgcolor="#000000"><font size="1" color="#FFFFFF" face="Verdana">
-        Thursday</font>    </TH>
-      <TH valign=center align=middle width="14%" bgcolor="#000000"><font size="1" color="#FFFFFF" face="Verdana">
-        Friday</font></TH>
-      <TH valign=center align=middle width="14%" bgcolor="#000000"><font size="1" color="#FFFFFF" face="Verdana">
-        Saturday</font></TH>
-      <TH valign=center align=middle width="14%" bgcolor="#000000"><font size="1" color="#FFFFFF" face="Verdana">
-        Sunday</font></TH>
-    </TR>
-     <%for m in 1..6 %><TR>
 
-        <%for n in 1..7 %>
-          <%data = @week.day%>
-          <TD vAlign=top align=left width="14%" ><%="#{data}" %><br><br><br><br></TD>
-   
-    
-    <%if([4,6,9,11].include?(@week.month))
-            if ((@week.day).to_i + 1)<31
-              @week = Date.new(@week.year,@week.month,(@week.day).to_i + 1)
-            else
-              @week = Date.new(@week.year,(@week.month).to_i+1,1)
-            end
-         
-          else
-            if ((@week.day).to_i + 1)<32
-              @week = Date.new(@week.year,@week.month,(@week.day).to_i + 1)
-            else
-              @week = Date.new(@week.year,(@week.month).to_i+1,1)
-            end
-          end%>
-        <%end%>
-      </TR>
-    <%end%>
+
+<TABLE>
+  <tr>  
+
+    <TD> <%=event.name%></TD>
+    <TD><%=event.text%></TD>
+    <TD><%=event.date%></TD>
+  </tr>
 </TBODY>
 </TABLE>
+

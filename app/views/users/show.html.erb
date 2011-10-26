@@ -3,6 +3,7 @@
 <%= link_to 'Edit my profile', edit_user_path(@user) %> |
 <%= link_to 'show all users', users_path %>
 <%= link_to 'home page', root_path %>
+<%=link_to "go my calendar", calendar_path(:current) %>
 <p>
   <b>your Name:</b>
   <%= @user.name -%>

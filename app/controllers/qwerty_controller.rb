@@ -7,13 +7,14 @@ class QwertyController < ApplicationController
     months = {1=>"January",2 => "February", 3 => "March",4 => "April",
       5 => "May",6 => "June", 7 => "July",8 => "August",
       9 => "September",10 => "October", 11 => "November",12 => "December"}
-    month_now = Time.now.month
-    @month = months[month_now]
+    @month_now = Time.now.month
+    @month = months[@month_now]
    
     first = Date.today.beginning_of_month
     last = Date.today.end_of_month
     @week = first.at_beginning_of_week
    
+    # не удается создать выборку за текущий месяц
     @events = current_user.events#.where("date >= #{first} and date <=#{last}")
     
    
