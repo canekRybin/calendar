@@ -2,9 +2,18 @@
 <%= link_to 'Edit my profile', edit_user_path(:current) %> |
 <%= link_to 'show all users', users_path %>
 <%= link_to 'home page', root_path %>
+<%=link_to "show all events", user_path(:current) %>
+<%=link_to "add event", new_event_path %>
+
 <p>
-  <b>your Name:</b>
-  <%= current_user.name %>
+   
+    <%if current_user.name.empty?%>
+    <b><%="hello user"%></b>
+    <%else%>
+      <b><%="your Name"%></b>
+      <%= "#{current_user.name}"%>
+    <%end%>
+  
 </p>
 
 <p>
@@ -14,10 +23,11 @@
 
 <font size="15" color="#000000" align="rigth"> <%="#{@month}"%> </font> 
 
-<%#=render @events%>
+
 
 
 <%#=@events%>
+
 <TABLE width="100%" border=1 bordercolordark="#000000" bordercolorlight="#FFFFFF" cellpadding="5">
   <TBODY>
     <TR>
@@ -42,8 +52,8 @@
           <%data = @week.day%>
           <%if @month_now == @week.month%>
             <TD vAlign=top align=left width="14%" bgcolor="#afcddf" >
-              <%else%>
-               <TD vAlign=top align=left width="14%"> 
+            <%else%>
+            <TD vAlign=top align=left width="14%"> 
             <%end%>
             <%="#{data}"%>
 
@@ -53,7 +63,7 @@
                 qwerty=Date.parse("#{event.date}")
                 if qwerty.month == @week.month
                   if qwerty.day == @week.day%>
-                    <%= link_to "#{event.name}", event %>
+                    <%= link_to "#{event.name}", edit_event_path(event) %>
                   <%
                   end
                 else
@@ -85,14 +95,3 @@
   </TBODY>
 </TABLE>
 
-
-
-
-<%# unless @user.events.empty? %>
-<%#*<table class="events" summary="User events">%>
-<%#= render @events %>
-<%#*</table>%>  
-<%# end %>
-
-<%#= will_paginate @events %>
-<%#=link_to 'new event', new_event_path%>

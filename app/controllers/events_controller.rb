@@ -2,7 +2,7 @@ class EventsController < ApplicationController
   # GET /events
   # GET /events.json
   def index
-    @events = Event.all
+    @events = current_user.events.all
 
     respond_to do |format|
       format.html # index.html.erb
@@ -10,10 +10,18 @@ class EventsController < ApplicationController
     end
   end
 
+  def all_events
+    @events = Events.all
+    @users = events.users.all
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @events }
+    end
+  end
   # GET /events/1
   # GET /events/1.json
   def show
-    @event = Event.find(params[:id])
+    @event = current_user.events.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
@@ -44,7 +52,7 @@ class EventsController < ApplicationController
   # POST /events
   # POST /events.json
   def create
-   
+    @repeats = Repeat.all 
     @event = current_user.events.build(params[:event])
  
     respond_to do |format|
@@ -77,11 +85,11 @@ class EventsController < ApplicationController
   # DELETE /events/1
   # DELETE /events/1.json
   def destroy
-    @event = Event.find(params[:id])
+    @event = Event.find
     @event.destroy
 
     respond_to do |format|
-      format.html { redirect_to events_url }
+      format.html { redirect_to calendar_url }
       format.json { head :ok }
     end
   end

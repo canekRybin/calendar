@@ -3,4 +3,5 @@
 <%= render 'form' %>
 
 <%= link_to 'Show', @event %> |
-<%= link_to 'Back', calendar_path %>
+<%= link_to 'to calendar', calendar_path %>
+<%= link_to 'Destroy',  @event, method: :destroy %>

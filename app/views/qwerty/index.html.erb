@@ -12,7 +12,11 @@
 
     <div id ="user_nav">
       <%if current_user%>
-        <%="hello #{current_user.name}"%>
+        <%=if current_user.name.empty?
+          "hello user #{current_user.email}"
+        else
+          "hello #{current_user.name}"
+        end%>
         <br>        <br>  
         <%= link_to 'edit profile', edit_user_path(:current)%>
         <%= link_to 'all users', users_path%>
