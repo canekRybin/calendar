@@ -2,18 +2,18 @@
 <%= link_to 'Edit my profile', edit_user_path(:current) %> |
 <%= link_to 'show all users', users_path %>
 <%= link_to 'home page', root_path %>
-<%=link_to "show all events", user_path(:current) %>
+<%=link_to "show my events", user_path(:current) %>
 <%=link_to "add event", new_event_path %>
-
+<%=link_to "show all events", all_events_path %>
 <p>
-   
-    <%if current_user.name.empty?%>
+
+  <%if current_user.name.empty?%>
     <b><%="hello user"%></b>
-    <%else%>
-      <b><%="your Name"%></b>
-      <%= "#{current_user.name}"%>
-    <%end%>
-  
+  <%else%>
+    <b><%="your Name"%></b>
+    <%= "#{current_user.name}"%>
+  <%end%>
+
 </p>
 
 <p>
@@ -23,7 +23,7 @@
 
 <font size="15" color="#000000" align="rigth"> <%="#{@month}"%> </font> 
 
-
+<font  color="#000000" align="right"> <%=link_to "next_month", calendar_path %></font> 
 
 
 <%#=@events%>
@@ -76,17 +76,25 @@
 
 
           <%if([4,6,9,11].include?(@week.month))
-            if ((@week.day).to_i + 1)<31
+            if ((@week.day).to_i)<30
               @week = Date.new(@week.year,@week.month,(@week.day).to_i + 1)
             else
               @week = Date.new(@week.year,(@week.month).to_i+1,1)
             end
 
           else
-            if ((@week.day).to_i + 1)<32
-              @week = Date.new(@week.year,@week.month,(@week.day).to_i + 1)
+            if @week.month == 2
+              if ((@week.day).to_i)<31
+                @week = Date.new(@week.year,@week.month,(@week.day).to_i + 1)
+              else
+                @week = Date.new(@week.year,(@week.month).to_i+1,1)
+              end
             else
-              @week = Date.new(@week.year,(@week.month).to_i+1,1)
+              if ((@week.day).to_i)<31
+                @week = Date.new(@week.year,@week.month,(@week.day).to_i + 1)
+              else
+                @week = Date.new(@week.year,(@week.month).to_i+1,1)
+              end
             end
           end%>
         <%end%>

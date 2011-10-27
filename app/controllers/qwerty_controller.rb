@@ -26,4 +26,7 @@ class QwertyController < ApplicationController
     @events = current_user.events.find_all_by_date(first..last)
       
   end
+  
+  
+  
 end

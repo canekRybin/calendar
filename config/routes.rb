@@ -8,7 +8,7 @@ Calendar::Application.routes.draw do
 
   resources :users
   match 'destroy', :to => 'events#destroy'
- 
+  match 'all_events', :to => 'events#all_events'
   match 'calendar', :to => 'qwerty#my_events'
 
 	match 'logout', :to => 'user_sessions#destroy' #, :as => "logout"

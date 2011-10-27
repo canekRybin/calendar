@@ -9,10 +9,11 @@ class EventsController < ApplicationController
       format.json { render json: @events }
     end
   end
-
+  
+  # GET /events
+  # GET /events.json
   def all_events
-    @events = Events.all
-    @users = events.users.all
+    @events = Event.all
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @events }
